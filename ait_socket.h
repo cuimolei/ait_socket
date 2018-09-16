@@ -245,7 +245,7 @@ public:
 		//Set sever addr and port
 		SOCKADDR_IN addr;
 		addr.sin_family = AF_INET;
-		addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+		addr.sin_addr.s_addr = inet_addr(ip);
 		addr.sin_port = htons(25001);
 		ret = connect(connect_socet, (SOCKADDR *)&addr, sizeof(SOCKADDR_IN));
 		AIT_CEHCK_ERR(ret == SOCKET_ERROR, WSAGetLastError(), INVALID_SOCKET);
